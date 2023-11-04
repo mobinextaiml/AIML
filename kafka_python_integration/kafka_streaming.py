@@ -5,7 +5,7 @@ import csv
 from datetime import datetime
 
 # Kafka and camera configurations
-KAFKA_BROKER = "localhost:9092"  # Change this to the appropriate Kafka broker address
+KAFKA_BROKER = "localhost:9092"  # Kafka broker address
 KAFKA_TOPIC_PREFIX = "camera_streaming"
 
 cameras = {
