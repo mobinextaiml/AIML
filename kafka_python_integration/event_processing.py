@@ -4,19 +4,18 @@ import csv
 import time
 
 # Define Kafka and RabbitMQ configurations
-KAFKA_BROKER = "localhost:9092"  # Change this to the appropriate Kafka broker address
-KAFKA_TOPIC_PREFIX = "camera_streaming"
+KAFKA_BROKER = "localhost:9092"  #  Kafka broker
 
-# Define the YOLO models for each camera
+# YOLO models for each camera
 models = {
-    101: YOLO("human_updated.pt"),
-    202: YOLO("human_updated.pt"),
-    303: YOLO("human_updated.pt"),
-    404: YOLO("human_updated.pt"),
-    505: YOLO("human_updated.pt"),
-    606: YOLO("human_updated.pt"),
-    707: YOLO("human_updated.pt"),
-    807: YOLO("human_updated.pt"),
+    101: YOLO("segment.pt"),
+    202: YOLO("segment.pt"),
+    303: YOLO("segment.pt"),
+    404: YOLO("segment.pt"),
+    505: YOLO("segment.pt"),
+    606: YOLO("segment.pt"),
+    707: YOLO("segment.pt"),
+    807: YOLO("segment.pt"),
 }
 
 
