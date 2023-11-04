@@ -1,0 +1,35 @@
+# start zoopkeeper server
+& "C:\Users\DELL\Desktop\kafka\bin\windows\zookeeper-server-start.bat" "C:\Users\DELL\Desktop\kafka\config\zookeeper.properties"
+
+# start kafka server
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-server-start.bat" "C:\Users\DELL\Desktop\kafka\config\server.properties"
+
+# Start topics
+&"C:\Users\DELL\Desktop\kafka\bin\windows\kafka-topics.bat" --create --topic camera_streaming --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2
+
+# start producer
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-console-producer.bat" --topic camera_streaming --bootstrap-server localhost:9092
+
+# to send the messages from producer
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-console-producer.bat" --bootstrap-server localhost:9092 --property "parse.key=true" --property
+
+# start consumer
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-console-consumer.bat" --topic camera_streaming --from-beginning --bootstrap-server localhost:9092
+
+# to check total active topics
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-topics.bat" --list --bootstrap-server localhost:9092
+
+# to describe topic
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-topics.bat" --bootstrap-server localhost:9092 --describe --topic objdect
+
+# To verify the messages being produced to a topic
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-console-consumer.bat" --bootstrap-server localhost:9092 --topic camera_streaming --from-beginning
+
+# To check the consumer groups and their offsets:
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-consumer-groups.bat" --bootstrap-server localhost:9092 --list
+
+# To describe a specific consumer group:
+& "C:\Users\DELL\Desktop\kafka\bin\windows\kafka-consumer-groups.bat" --bootstrap-server localhost:9092 --describe --group your_consumer_group
+
+
+
